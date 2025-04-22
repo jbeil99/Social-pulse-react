@@ -1,0 +1,73 @@
+/* Custom styles to enhance Bootstrap navbar */
+
+.navbar {
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .nav-link {
+    position: relative;
+    margin: 0 0.25rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0D6EFD;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  
+  .dropdown-menu {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: none;
+    padding: 0.5rem;
+  }
+  
+  .dropdown-item {
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown-item:active {
+    background-color: #0D6EFD;
+  }
+  
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      padding: 1rem 0;
+    }
+    
+    .nav-link {
+      padding: 0.75rem 0;
+    }
+    
+    .nav-link::after {
+      display: none;
+    }
+    
+    .dropdown-menu {
+      box-shadow: none;
+      border: none;
+      padding-left: 1rem;
+    }
+  }

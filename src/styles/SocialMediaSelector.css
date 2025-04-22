@@ -1,0 +1,52 @@
+.platform-icons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .platform-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .platform-icon:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .platform-icon.active {
+    background-color: #f0f0f0;
+    border: 2px solid #ff0000;
+  }
+  
+  .platform-icon .youtube-icon {
+    color: #ff0000;
+  }
+  
+  .content-type-selector {
+    display: flex;
+    align-items: center;
+  }
+  
+  .youtube-icon-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .form-check-input:checked {
+    background-color: #ff0000;
+    border-color: #ff0000;
+  }

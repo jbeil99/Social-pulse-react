@@ -1,0 +1,42 @@
+.creator-card {
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .connect-youtube-btn {
+    background-color: #6200ee;
+    border-color: #6200ee;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .connect-youtube-btn:hover {
+    background-color: #5000ca;
+    border-color: #5000ca;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .add-tags-btn .btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .youtube-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  
+  .create-post-panel,
+  .preview-panel-wrapper {
+    height: 100%;
+  }
+  
+  /* Optional: make the layout responsive */
+  @media (max-width: 768px) {
+    .youtube-grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+ 

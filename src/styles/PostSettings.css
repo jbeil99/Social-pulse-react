@@ -1,0 +1,27 @@
+.post-settings label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .post-settings .form-control,
+  .post-settings .form-select {
+    border-color: #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .post-settings .form-control:focus,
+  .post-settings .form-select:focus {
+    border-color: #6200ee;
+    box-shadow: 0 0 0 0.25rem rgba(98, 0, 238, 0.15);
+  }
+  
+  .post-settings .form-check {
+    margin-top: 10px;
+  }
+  
+  .post-settings .form-check-input:checked {
+    background-color: #ff0000;
+    border-color: #ff0000;
+  }

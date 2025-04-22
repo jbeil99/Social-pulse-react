@@ -1,0 +1,92 @@
+.editor-area {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .editor-textarea {
+    border: none;
+    resize: none;
+    min-height: 150px;
+    font-size: 15px;
+    padding: 12px;
+  }
+  
+  .editor-textarea:focus {
+    box-shadow: none;
+  }
+  
+  .video-upload-area {
+    padding: 20px;
+    border-top: 1px solid #eee;
+  }
+  
+  .upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+  
+  .upload-placeholder:hover {
+    border-color: #aaa;
+    background-color: #f9f9f9;
+  }
+  
+  .upload-placeholder p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .upload-placeholder a {
+    color: #6200ee;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .toolbar-btn {
+    color: #f2ecec;
+    border: none;
+    background: transparent;
+    margin-right: 5px;
+  }
+  
+  .toolbar-btn:hover {
+    color: #000;
+    background-color: #f0f0f0;
+  }
+  
+  .sparkles-btn {
+    color: #6200ee;
+  }
+  
+  .ai-assistant-btn {
+    display: flex;
+    align-items: center;
+    color: #333;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-left: 5px;
+    font-size: 14px;
+  }
+  
+  .char-counter {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .automatic-settings .btn {
+    color: #6200ee;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
