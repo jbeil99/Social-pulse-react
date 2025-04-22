@@ -50,3 +50,100 @@
     background-color: #ff0000;
     border-color: #ff0000;
   }
+
+  .platform-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.platform-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.platform-icon.active {
+  background-color: #e0e0e0;
+}
+
+.social-media-input {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.social-media-input .platform-name {
+  font-weight: bold;
+}
+
+
+/* Styling for the textarea */
+.social-media-textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  resize: none;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-media-textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Add spacing and alignment for the textarea container */
+.social-media-input {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.social-media-input .platform-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Drag and Drop Section */
+.drag-drop-section {
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.drag-drop-section:hover {
+  background-color: #e9ecef;
+}
+
+/* Additional Options */
+.additional-options .btn {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+.additional-options .text-muted {
+  font-size: 12px;
+}
+
+/* Title and Category Section */
+.social-media-input input.form-control {
+  font-size: 14px;
+  padding: 8px;
+}
+
+.social-media-input select.form-select {
+  font-size: 14px;
+  padding: 8px;
+}

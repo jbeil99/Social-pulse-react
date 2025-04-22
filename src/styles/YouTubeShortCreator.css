@@ -39,4 +39,11 @@
     }
   }
   
- 
+  .tag-input-dropdown {
+    width: 200px;
+    z-index: 1050; /* Ensure it appears above other elements */
+  }
+  
+  .tag-input-dropdown input {
+    font-size: 14px;
+  }
