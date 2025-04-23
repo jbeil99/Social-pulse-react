@@ -1,0 +1,9 @@
+export default function LogoutButton() {
+  const handleLogout = () => {
+    localStorage.removeItem("access");
+    localStorage.removeItem("refresh");
+    alert("Logged out.");
+  };
+
+  return <button onClick={handleLogout}>Logout</button>;
+}

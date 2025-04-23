@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Form, Button, InputGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate for routing
 import {
   Search, User, ShoppingCart, Menu, X, Home, Settings, LogOut, Bell, LayoutGrid
 } from 'lucide-react';
@@ -18,7 +19,7 @@ const productItems = [
   { href: '#products/all', label: 'View All Products' },
 ];
 
-const userDropdownItems = [
+const userDropdownItems = (handleLogout) => [
   { href: '#profile', label: 'Profile' },
   {
     href: '#account',
@@ -38,14 +39,40 @@ const userDropdownItems = [
         Logout
       </>
     ),
+    onClick: handleLogout,
   },
 ];
 
 const NavbarComponent = () => {
   const [expanded, setExpanded] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);  // Authentication state
+  const [userName, setUserName] = useState(''); // Placeholder for username
+  const navigate = useNavigate();  // Hook for routing
 
   const handleToggle = () => setExpanded(!expanded);
   const closeNavbar = () => setExpanded(false);
+
+  // Simulating authentication check
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user')); // Example from localStorage
+    if (user) {
+      setIsAuthenticated(true);
+      setUserName(user.name);  // Assuming the user object has a 'name' property
+    }
+  }, []);
+
+  const handleLogout = () => {
+    // Clear authentication data and redirect to login page (or handle as per your needs)
+    localStorage.removeItem('user');
+    setIsAuthenticated(false);
+    setUserName('');
+    navigate('/login');  // Redirect to login page after logout
+  };
+
+  const handleLoginRedirect = () => {
+    // Redirect to the login page if not authenticated
+    navigate('/login');
+  };
 
   return (
     <Navbar
@@ -129,17 +156,24 @@ const NavbarComponent = () => {
               </span>
             </Nav.Link>
 
-            <NavDropdown title={<User size={20} />} id="user-dropdown" align="end">
-              {userDropdownItems.map((item, idx) =>
-                item.divider ? (
-                  <NavDropdown.Divider key={idx} />
-                ) : (
-                  <NavDropdown.Item key={idx} href={item.href} onClick={closeNavbar}>
-                    {item.label}
-                  </NavDropdown.Item>
-                )
-              )}
-            </NavDropdown>
+            {isAuthenticated ? (
+              <NavDropdown title={<User size={20} />} id="user-dropdown" align="end">
+                <NavDropdown.Item disabled>Welcome, {userName}</NavDropdown.Item>
+                {userDropdownItems(handleLogout).map((item, idx) =>
+                  item.divider ? (
+                    <NavDropdown.Divider key={idx} />
+                  ) : (
+                    <NavDropdown.Item key={idx} href={item.href} onClick={item.onClick || closeNavbar}>
+                      {item.label}
+                    </NavDropdown.Item>
+                  )
+                )}
+              </NavDropdown>
+            ) : (
+              <Nav.Link href="#login" onClick={handleLoginRedirect}>
+                <User size={20} /> Login
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
